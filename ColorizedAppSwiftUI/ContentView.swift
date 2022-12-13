@@ -8,14 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var redColor: Double = 155
+    @State private var greenColor: Double = 30
+    @State private var blueColor: Double = 50
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        VStack(spacing: 30) {
+            
+            ColorViewUI(red: redColor, green: greenColor, blue: blueColor)
+            
+            VStack {
+                SliderView(colorValue: $redColor, sliderSelfColor: .red)
+                SliderView(colorValue: $greenColor, sliderSelfColor: .green)
+                SliderView(colorValue: $blueColor, sliderSelfColor: .blue)
+            }
+            
+            Spacer()
+            
+        }.padding()
     }
 }
 

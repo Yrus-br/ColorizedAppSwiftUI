@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F8B1A1A2948F97400C0DE04 /* ColorViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B1A192948F97400C0DE04 /* ColorViewUI.swift */; };
+		3F8B1A1C29490E2E00C0DE04 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B1A1B29490E2E00C0DE04 /* SliderView.swift */; };
 		3F97DECB2948F2CD00EDD37F /* ColorizedAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F97DECA2948F2CD00EDD37F /* ColorizedAppSwiftUIApp.swift */; };
 		3F97DECD2948F2CD00EDD37F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F97DECC2948F2CD00EDD37F /* ContentView.swift */; };
 		3F97DECF2948F2CE00EDD37F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F97DECE2948F2CE00EDD37F /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F8B1A192948F97400C0DE04 /* ColorViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewUI.swift; sourceTree = "<group>"; };
+		3F8B1A1B29490E2E00C0DE04 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		3F97DEC72948F2CD00EDD37F /* ColorizedAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorizedAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F97DECA2948F2CD00EDD37F /* ColorizedAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorizedAppSwiftUIApp.swift; sourceTree = "<group>"; };
 		3F97DECC2948F2CD00EDD37F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 			children = (
 				3F97DECA2948F2CD00EDD37F /* ColorizedAppSwiftUIApp.swift */,
 				3F97DECC2948F2CD00EDD37F /* ContentView.swift */,
+				3F8B1A1B29490E2E00C0DE04 /* SliderView.swift */,
+				3F8B1A192948F97400C0DE04 /* ColorViewUI.swift */,
 				3F97DECE2948F2CE00EDD37F /* Assets.xcassets */,
 				3F97DED02948F2CE00EDD37F /* Preview Content */,
 			);
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F97DECD2948F2CD00EDD37F /* ContentView.swift in Sources */,
+				3F8B1A1C29490E2E00C0DE04 /* SliderView.swift in Sources */,
+				3F8B1A1A2948F97400C0DE04 /* ColorViewUI.swift in Sources */,
 				3F97DECB2948F2CD00EDD37F /* ColorizedAppSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
