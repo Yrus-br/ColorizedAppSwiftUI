@@ -19,9 +19,9 @@ struct ContentView: View {
             ColorViewUI(red: redColor, green: greenColor, blue: blueColor)
             
             VStack {
-                SliderView(colorValue: $redColor, sliderSelfColor: .red)
-                SliderView(colorValue: $greenColor, sliderSelfColor: .green)
-                SliderView(colorValue: $blueColor, sliderSelfColor: .blue)
+                SliderView(value: $redColor, color: .red)
+                SliderView(value: $greenColor, color: .green)
+                SliderView(value: $blueColor, color: .blue)
             }
             
             Spacer()
