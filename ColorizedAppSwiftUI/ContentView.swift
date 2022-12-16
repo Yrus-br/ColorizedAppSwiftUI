@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var redColor: Double = 155
-    @State private var greenColor: Double = 30
-    @State private var blueColor: Double = 50
+    @State private var redColor = Double.random(in: 0...255).rounded()
+    @State private var greenColor = Double.random(in: 0...255).rounded()
+    @State private var blueColor = Double.random(in: 0...255).rounded()
+    
+    @FocusState private var isInputActive: Bool
     
     var body: some View {
         VStack(spacing: 30) {
@@ -23,10 +25,22 @@ struct ContentView: View {
                 SliderView(value: $greenColor, color: .green)
                 SliderView(value: $blueColor, color: .blue)
             }
+            .focused($isInputActive)
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button("Done") {
+                        isInputActive = false
+                    }
+                }
+            }
             
             Spacer()
-            
-        }.padding()
+        }
+        .padding()
+        .onTapGesture {
+            isInputActive = false
+        }
     }
 }
 
@@ -35,3 +49,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

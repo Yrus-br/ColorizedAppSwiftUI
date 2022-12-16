@@ -21,9 +21,9 @@ struct SliderView: View {
                 .foregroundColor(.white)
             
             Slider(value: $value, in: 0...255, step: 1)
-                .accentColor(color)
-                .onChange(of: value) { newValue in
-                    text = newValue.formatted()
+                .tint(color)
+                .onChange(of: value) {
+                    text = $0.formatted()
                 }
             
             TextFieldView(text: $text, value: $value, action: checkValue)
