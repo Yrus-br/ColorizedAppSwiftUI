@@ -13,33 +13,74 @@ struct ContentView: View {
     @State private var greenColor = Double.random(in: 0...255).rounded()
     @State private var blueColor = Double.random(in: 0...255).rounded()
     
-    @FocusState private var isInputActive: Bool
+    @FocusState private var focusedField: Field?
     
     var body: some View {
-        VStack(spacing: 30) {
-            
-            ColorViewUI(red: redColor, green: greenColor, blue: blueColor)
-            
-            VStack {
-                SliderView(value: $redColor, color: .red)
-                SliderView(value: $greenColor, color: .green)
-                SliderView(value: $blueColor, color: .blue)
-            }
-            .focused($isInputActive)
-            .toolbar {
-                ToolbarItemGroup(placement: .keyboard) {
-                    Spacer()
-                    Button("Done") {
-                        isInputActive = false
+        ZStack {
+            VStack(spacing: 40) {
+                ContentView()
+                VStack {
+                    SliderView(value: $redColor, color: .red)
+                        .focused($focusedField, equals: .red)
+                    SliderView(value: $greenColor, color: .green)
+                        .focused($focusedField, equals: .green)
+                    SliderView(value: $blueColor, color: .blue)
+                        .focused($focusedField, equals: .blue)
+                }
+                .frame(height: 150)
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Button(action: previousField) {
+                            Image(systemName: "chevron.up")
+                        }
+                        Button(action: nextField) {
+                            Image(systemName: "chevron.down")
+                        }
+                        Spacer()
+                        Button("Done") {
+                            focusedField = nil
+                        }
                     }
                 }
+                Spacer()
             }
-            
-            Spacer()
+            .padding()
+        }.onTapGesture {
+            focusedField = nil
         }
-        .padding()
-        .onTapGesture {
-            isInputActive = false
+    }
+}
+
+extension ContentView {
+    private enum Field {
+        case red
+        case green
+        case blue
+    }
+    
+    private func nextField() {
+        switch focusedField {
+        case .red:
+            focusedField = .green
+        case .green:
+            focusedField = .blue
+        case .blue:
+            focusedField = .red
+        case .none:
+            focusedField = nil
+        }
+    }
+    
+    private func previousField() {
+        switch focusedField {
+        case .red:
+            focusedField = .blue
+        case .green:
+            focusedField = .red
+        case .blue:
+            focusedField = .green
+        case .none:
+            focusedField = nil
         }
     }
 }
