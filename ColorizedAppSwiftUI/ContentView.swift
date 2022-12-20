@@ -18,7 +18,9 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             VStack(spacing: 40) {
-                ContentView()
+                
+                ColorViewUI(red: redColor, green: greenColor, blue: blueColor)
+                
                 VStack {
                     SliderView(value: $redColor, color: .red)
                         .focused($focusedField, equals: .red)
